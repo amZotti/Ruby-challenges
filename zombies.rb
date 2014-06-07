@@ -1,5 +1,6 @@
 class Game
   def initialize
+   @in_file = File.new("zombies.in.txt","r")
     gather_information
     format_dictionary_words
     start_turn_nth
@@ -16,18 +17,18 @@ class Game
 
   def ask_turns
     puts "How many turns do you want to have?"
-    @number_of_turns = gets.chomp.to_i
+    @number_of_turns = @in_file.readline.chomp.to_i
   end
 
   def ask_number_words
     puts "How many dictionary words do you want to have?"
-    @number_of_words = gets.chomp.to_i
+    @number_of_words = @in_file.readline.chomp.to_i
   end
 
   def ask_words
     puts "Pretty pretty please input #{@number_of_words} seperatd by RETURN. Kthnx bai"
     @number_of_words.times do
-      @dictionary_words << gets.chomp
+      @dictionary_words << @in_file.readline.chomp
     end
   end
 
@@ -37,7 +38,6 @@ class Game
       format_zombie_words
       find_matches
       create_matches
-      show_message
     end
   end
 
@@ -67,7 +67,6 @@ class Game
     @matched_letters.each do |word|
     match_index =  @dictionary_words.index(word)
     @matched_words << @unformatted_dictionary[match_index]
-    
     end
   end
 
@@ -102,13 +101,14 @@ class Game
 
   def ask_number_zombie_words
     puts "How many zombie words will we translate for this turn?"
-    @number_of_zombie_words = gets.chomp.to_i
+    @number_of_zombie_words = @in_file.readline.chomp.to_i
   end
 
   def gather_zombie_words
     @number_of_zombie_words.times do |word_num|
       puts "Enter word number #{word_num}"
-      @zombie_words << gets.chomp
+      @zombie_words << @in_file.readline.chomp
+      show_message
     end
   end
 
