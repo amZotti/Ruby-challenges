@@ -1,5 +1,6 @@
 class Factorial
-  def initialize(factorial)
+
+  def calculate(factorial)
     @num = 1
     @factorial = factorial
     calculateFactorial
@@ -13,4 +14,7 @@ class Factorial
   end
 end
 
-Factorial.new(5)
+factorial_calculator = Factorial.new()
+factorial_calculator.calculate(10)
+factorial_calculator.calculate(3)
+factorial_calculator.calculate(18)
