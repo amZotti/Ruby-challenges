@@ -6,7 +6,7 @@
 
 
 class String
-  def case_swap
+  def swapcase
     str2 = ''
     self.each_char do |word|
       if word == word.upcase
