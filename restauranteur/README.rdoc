@@ -4,3 +4,5 @@ Special thanks to:
 TeamTreeHouse: RSpec blog
 honeybadger.io (https://www.honeybadger.io/blog/2013/12/11/beginners-guide-to-angular-js-rails)
 Codeschool: Shaping up with Angular
+
+The tutorial honeybadger offers incorrectly tells the user to create 2 restauranteur controllers. The correct controller is the one in: app/assets/javascripts/angular/controllers/
