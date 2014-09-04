@@ -1,0 +1,23 @@
+1) Test Driven Development using Rspec
+--------------------------------------
+Rspec is a testing library for Ruby. With Rspec we are testing behavior, not
+methods. We use the commands 'describe' and 'context' to initiate a test. 
+
+Example: (Thanks to teamtreehouse)
+
+describe Hash do
+  it "should return a blank instance" do
+    Hash.new.should == {}
+  end
+end
+
+To execute a test you can type the following from terminal:
+rspec filename.rb
+
+
+2) Directives
+-------------
+Directives are basicall options which tell a program how to run. In AngularJS we
+use directives in our HTML, to tell Angular how to interpret the JS methods we
+are calling on it. In general directives do not do anything, but rather tell the
+compiler how to interpret the code it is presented.
