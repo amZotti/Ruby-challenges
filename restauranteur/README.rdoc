@@ -1,1 +1,6 @@
 This app is a platform for me to practice integrating AngularJS and Rails together.
+
+Special thanks to:
+TeamTreeHouse: RSpec blog
+honeybadger.io (https://www.honeybadger.io/blog/2013/12/11/beginners-guide-to-angular-js-rails)
+Codeschool: Shaping up with Angular
