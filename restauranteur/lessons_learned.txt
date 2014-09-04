@@ -17,7 +17,7 @@ rspec filename.rb
 
 2) Directives
 -------------
-Directives are basicall options which tell a program how to run. In AngularJS we
+Directives are basically options which tell a program how to run. In AngularJS we
 use directives in our HTML, to tell Angular how to interpret the JS methods we
 are calling on it. In general directives do not do anything, but rather tell the
 compiler how to interpret the code it is presented.
