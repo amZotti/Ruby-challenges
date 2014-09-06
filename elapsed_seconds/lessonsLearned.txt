@@ -1,0 +1,1 @@
+strftime('%s') method on time objects converts the timestamp into seconds
