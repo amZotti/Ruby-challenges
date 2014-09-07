@@ -30,6 +30,15 @@ class JuiceVegetables < JuicingRoutine
   end
 end
 
+class JuiceHerbs < JuicingRoutine
+  def initialize
+    super ("Juicing herbs")
+  end
+  def time
+    3
+  end
+end
+
 class CleanJuicer < JuicingRoutine
   def initialize
     super ("Cleaning juicer")
@@ -39,15 +48,20 @@ class CleanJuicer < JuicingRoutine
   end
 end
 
-#Composite class
-class Juice < JuicingRoutine
-  attr_reader :task, :steps
+class CleanBlade < JuicingRoutine
   def initialize
-    super ("Begin juicing process")
+    super ("Cleaning blade")
+  end
+  def time
+    5
+  end
+end
+
+#Composite class
+class CompositeTask < JuicingRoutine
+  attr_reader :task, :steps
+  def initialize(task)
     @steps = []
-    add_step AssembleJuicer.new
-    add_step JuiceVegetables.new
-    add_step CleanJuicer.new
   end
 
   def add_step(step)
@@ -65,4 +79,25 @@ class Juice < JuicingRoutine
   end
 end
 
-puts Juice.new.time_required
+class Omega8000 < CompositeTask
+  def initialize
+    super ("Use the Omega 8000 to get the most out of vegetables!")
+    add_step AssembleJuicer.new
+    add_step JuiceVegetables.new
+    add_step JuiceHerbs.new
+    add_step CleanJuicer.new
+  end
+end
+
+class BladedJuicer < CompositeTask
+  def initialize
+    super ("Using the cheap bladed juicer")
+    add_step AssembleJuicer.new
+    add_step JuiceVegetables.new
+    add_step CleanJuicer.new
+    add_step CleanBlade.new
+  end
+end
+
+puts Omega8000.new.time_required
+puts BladedJuicer.new.time_required
